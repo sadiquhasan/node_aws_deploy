@@ -1,0 +1,178 @@
+<section class="container bg-light">
+  <article>
+    <div class="main employeeBlock">
+      <h2 class="h2 text-uppercase py-3 font-weight-bold text-success"></h2>
+      <form
+        action="/employee/edit-emp/{{editPayload._id}}?_method=PUT"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <input type="hidden" name="_method" value="PUT" />
+        <div class="row">
+          <div class="col-3 form-group"><label for="">emp name</label><input
+              type="text"
+              class="form-control"
+              id="emp_name"
+              placeholder="enter name"
+              name="emp_name"
+              value="{{editPayload.emp_name}}"
+              require="required"
+            /></div>
+          <div class="col-3 form-group">
+            <label for="">id</label>
+            <input
+              type="text"
+              class="form-control"
+              id="emp_id"
+              placeholder="enter id"
+              name="emp_id"
+              value="{{editPayload.emp_id}}"
+              require="required"
+            />
+          </div>
+          <div class="col-3 form-group">
+            <label for="">emp salary</label>
+            <input
+              type="text"
+              class="form-control"
+              id="emp_salary"
+              placeholder="enter salary"
+              name="emp_salary"
+              value="{{editPayload.emp_salary}}"
+              require="required"
+            />
+          </div>
+
+          <div class="col-3 form-group">
+            <label for="">emp email</label>
+            <input
+              type="text"
+              class="form-control"
+              id="emp_email"
+              placeholder="enter email"
+              name="emp_email"
+              value="{{editPayload.emp_email}}"
+              require="required"
+            />
+          </div>
+
+          <div class="col-3 form-group">
+            <label for="">emp experience</label>
+            <input
+              type="text"
+              class="form-control"
+              id="emp_experience"
+              placeholder="enter experience"
+              name="emp_experience"
+              value="{{editPayload.emp_experience}}"
+              require="required"
+            />
+          </div>
+
+          <div class="col-3 form-group">
+            <label for="">emp location</label>
+            <input
+              type="text"
+              class="form-control"
+              id="emp_location"
+              placeholder="enter location"
+              name="emp_location"
+              value="{{editPayload.emp_location}}"
+              require="required"
+            />
+          </div>
+
+          <div class="col-3 form-group">
+            <label for="">emp designation</label>
+            <input
+              type="text"
+              class="form-control"
+              id="emp_designation"
+              placeholder="enter designation"
+              name="emp_designation"
+              require="required"
+              value="{{editPayload.emp_designation}}"
+            />
+          </div>
+
+          <div class="col-3 form-group">
+            <label for="emp_photo">emp photo</label>
+            <input
+              type="file"
+              class="form-control"
+              id="emp_photo"
+              placeholder="enter photo"
+              name="emp_photo"
+              require="required"
+            />
+          </div>
+
+          <div class="col-3 form-group">
+            <label for="">emp skill</label>
+            <input
+              type="checkbox"
+              value=""
+              class="form-control"
+              id="emp_skill"
+              placeholder="enter skill"
+              name="html"
+              value="HTML"
+              checked
+            />
+            <input
+              type="checkbox"
+              class="form-control"
+              id="emp_skill"
+              placeholder="enter skill"
+              name="css"
+              value="CSS"
+            />
+            <input
+              type="checkbox"
+              class="form-control"
+              id="emp_skill"
+              placeholder="enter skill"
+              name="js"
+              value="JavaScript"
+            />
+          </div>
+
+          <div class="col-3 form-group">
+            <label for="">emp gender</label>
+            <input
+              type="radio"
+              class="form-check-input1"
+              id="emp_experience"
+              placeholder="enter experience"
+              name="gender"
+              value="male"
+              require="required"
+            />
+            <input
+              type="radio"
+              class="form-check-input1"
+              id="emp_experience"
+              placeholder="enter experience"
+              name="gender"
+              value="female"
+              require="required"
+            />
+          </div>
+
+          <div class="col-3 form-group"><label for="">emp education</label>
+            <select name="emp_edu" id="emp_edu" class="form-control">
+              <option value="bca">bca</option>
+              <option value="be">be</option>
+              <option value="msc">msc</option>
+              <option value="mca">mca</option>
+            </select>
+          </div>
+
+          <button class="btn btn-success mt-3">Update</button>
+        </div>
+      </form>
+    </div>
+  </article>
+</section>
+
+{{! exp gender location designation skills }}

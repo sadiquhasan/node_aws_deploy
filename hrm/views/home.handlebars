@@ -1,0 +1,42 @@
+<section class="container-fluid my-4">
+  <article>
+    <table class="table table-bordered table-hover text-uppercase">
+      <thead class="table-dark">
+        <tr>
+          <th>Photo</th>
+          <th>id</th>
+          <th>salary</th>
+          <th>designation</th>
+          <th>exp</th>
+          <th>edu</th>
+          <th>email</th>
+          <th>location</th>
+          <th>Employee detials</th>
+          <th>Employee Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each payload}}
+          <tr>
+            <td>
+              <img
+                width="150px"
+                src="{{trimString emp_photo.0.path}}"
+                alt="{{emp_name}}"
+              />
+            </td>
+            <td>{{emp_id}}</td>
+            <td>{{emp_salary}}</td>
+            <td>{{emp_designation}}</td>
+            <td>{{emp_experience}}</td>
+            <td>{{emp_edu}}</td>
+            <td>{{emp_email}}</td>
+            <td>{{emp_location}}</td>
+            <td><a href="/employee/{{_id}}">Details</a></td>
+            <td><a href="/employee/edit-emp/{{_id}}">Edit</a></td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </article>
+</section>
