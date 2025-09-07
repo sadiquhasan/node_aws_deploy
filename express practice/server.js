@@ -1,12 +1,21 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const Product = require("./models/products");
 const bodyparser = require("body-parser");
 const app = express();
-const PORT = 3000;
+
+const PORT = process.env.PORT || 3000;
+
+const mongoUser = process.env.MONGO_USER;
+const mongoPass = process.env.MONGO_PASS;
+const mongoHost = process.env.MONGO_HOST; 
+const mongoOptions =
+  process.env.MONGO_OPTIONS || "?retryWrites=true&w=majority&appName=Cluster0";
 
 const url =
-  "mongodb+srv://12345:12345@cluster0.b4sij.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+  process.env.MONGO_URL ||
+  `mongodb+srv://${mongoUser}:${mongoPass}@${mongoHost}/${mongoOptions}`;
 
 mongoose
   .connect(url, {
@@ -41,5 +50,5 @@ app.post("/add-product", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log("Server Started");
+  console.log(`Server Started on port ${PORT}`);
 });
