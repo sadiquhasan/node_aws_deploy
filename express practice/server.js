@@ -8,8 +8,8 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const mongoUser = process.env.MONGO_USER;
-const mongoPass = process.env.MONGO_PASS;
 const mongoHost = process.env.MONGO_HOST; 
+const mongoPass = process.env.MONGO_PASS;
 const mongoOptions =
   process.env.MONGO_OPTIONS || "?retryWrites=true&w=majority&appName=Cluster0";
 
